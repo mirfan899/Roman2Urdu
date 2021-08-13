@@ -13,4 +13,5 @@ for xml in xmls:
         urdu.append(p.text)
     with open("data/makhzan_urdu.txt", "a") as writer:
         for line in urdu:
-            writer.write(line.strip() +"\n")
+            if line and len(line.split(" ")) > 5:
+                writer.write(line.strip() + "\n")
