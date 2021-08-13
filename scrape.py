@@ -5,6 +5,6 @@ roman = open("data/makhzan_roman.txt", "w")
 
 for line in lines:
     trans = ijunoon(get_transliteration(line.strip()))
-    roman.write(trans + "\n")
+    roman.write(trans.strip() + "\n")
 
 roman.close()
