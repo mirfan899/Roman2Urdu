@@ -1,5 +1,17 @@
-from helpers import clean_urdu_sentence
-ur = "بعض مقامات پر اندراجات کی تسوید میں ترتیبِ حروفِ تہجی کا خیال نہیں کیا، مثال کے طور پر ”جھوٹے منھ نہ پوچھنا“ کے بعد ”جھوٹی سچی اوڑانا [اُڑانا] کا اندراج ہے جبکہ ترتیب میں ”جھوٹی“ سے شروع ہونے والے مرکبات کا اندراج ”جھوٹے“ سے شروع ہونے والے اندراجات سے پہلے ہونا چاہیے کیونکہ ”جھوٹی“ میں یاے معروف ہے جو لغت میں ترتیب کے لحاظ سے پہلے آنی چاہیے۔ اگر یہ فرض کیا جائے کہ یاے معروف اور مجہول کے فرق کوبعض قدیم لغات کے تتبع میں اس لغت میں نظر انداز کیا گیا ہے تو پھر بھی بات نہیں بنتی کیونکہ اگلا اندراج ”جھوٹے کو حد تک پہونچانا [پہنچانا]“ کا ہے اور اس میں پھر یاے معروف کی بجاے مجہول ہے (ص۱۰۲)۔"
+from helpers import clean_urdu_sentence, clean_roman_sentence
+urdu = open("data/makhzan_urdu.txt", "r").readlines()
+roman = open("data/makhzan_roman.txt", "r").readlines()
 
-sentences = clean_urdu_sentence([ur])
-print(sentences)
+usentences = clean_urdu_sentence(urdu)
+rsentences = clean_roman_sentence(roman)
+
+with open("data/makhzan_urdu_cleaned.txt", "w") as uwriter:
+    for line in usentences:
+        uwriter.write(line.strip() + "\n")
+
+
+with open("data/makhzan_roman_cleaned.txt", "w") as rwriter:
+    for line in rsentences:
+        rwriter.write(line.strip() + "\n")
+
+print("Written Urdu and Roman cleaned files......")

@@ -11,7 +11,7 @@ for xml in xmls:
     paragraphs = root.find("body/section")
     for p in paragraphs.iter("p"):
         urdu.append(p.text)
-    with open("data/makhzan_urdu.txt", "a") as writer:
+    with open("data/makhzan.txt", "a") as writer:
         for line in urdu:
             if line and len(line.split(" ")) > 5:
                 writer.write(line.strip() + "\n")
