@@ -1,3 +1,9 @@
+### Parallel Corpus
+Link contains multiple datasets for this task
+```text
+https://opus.nlpl.eu/index.php
+```
+
 ### Corpus
 I'm using `makhzan` repository and `ijunoon` dictionary to convert urdu to roman and later use it for transliertaion using
 `marian` tool.
